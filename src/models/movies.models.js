@@ -30,4 +30,7 @@ const Movies = db.define('movies', {
     }    
 })
 
+
+
+
 module.exports = Movies

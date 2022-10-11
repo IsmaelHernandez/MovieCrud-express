@@ -27,17 +27,17 @@ const createMovie = async (data) => {
     return newMovie
 }
 
-createMovie({
-    name:'Dr. Strage',
-    genre:'Science Fiction',
-    duration: 120,
-    releaseDate: '2019/07/14'
-})
-    .then((response) => console.log(response))
-    .catch((err) => console.log(err))
+// createMovie({
+//     name: 'Dr. Strage',
+//     genre: 'Science Fiction',
+//     duration: 120,
+//     releaseDate: '2019/07/14'
+// })
+//     .then((response) => console.log(response))
+//     .catch((err) => console.log(err))
 
 
-//Buscar po id
+//Buscar por id 
 const getMovieId = async (id) => {
     const data = await Movies.findOne({
         where: {
@@ -45,5 +45,51 @@ const getMovieId = async (id) => {
         }
     });//traer por id
     //retornamos el resultado
+    return data // si el where no encuentra retorna null
+}
+
+
+getMovieId('')
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err))
+
+
+//? Funcion editar Movie    
+const editMovie = async (id, data) => {
+    const response = await Movies.update(data, {
+        where: {
+            id: id
+        }
+    })
+    return response
+}
+
+// editMovie('07b90440-160e-4479-ac8a-f4d84eb3047d', {
+//     name: "spiderman 2"
+// })
+//     .then((response) => {
+//         console.log(response);
+//     })
+//     .catch((err) => {
+//         console.log(err)
+//     });
+
+
+//delete movieS
+const deleteMovieById = async (id) => {
+    const data = await Movies.destroy({
+        where: {
+            id
+        }
+    })
+
     return data
+}
+
+module.exports = {
+    getAllmovies,
+    getMovieId,
+    createMovie,
+    editMovie,
+    deleteMovieById,
 }

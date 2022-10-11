@@ -9,7 +9,7 @@ const config = {
         username: process.env.DB_USER || 'postgres',
         password: process.env.DB_PASS || 'root',
         host: process.env.DB_HOST || 'localhost',
-        name: process.env.DB_NAME || 'movies_crud'
+        name: process.env.DB_NAME || 'newbd'
     }
 }
 
