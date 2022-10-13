@@ -15,7 +15,7 @@ const getAllMovies = (req, res) => {
 
 //? servicio de crear una movie
 const postMovie = (req, res) => {
-    const { data } = req.body;
+    const  data  = req.body;
     if (data.name && data.genre && data.duration && data.releaseDate) {
         moviesControllers.createMovie(data)
             .then(response => {

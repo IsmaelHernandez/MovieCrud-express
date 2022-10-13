@@ -9,10 +9,6 @@ const getAllmovies = async () => {
     return data
 }
 
-//se hacen una promesa
-getAllmovies()
-    .then((response) => console.log(response))
-    .catch((err) => console.log(err))
 
 //crear un data en la tabla => es un insert
 const createMovie = async (data) => {
@@ -27,14 +23,14 @@ const createMovie = async (data) => {
     return newMovie
 }
 
-// createMovie({
-//     name: 'Dr. Strage',
-//     genre: 'Science Fiction',
-//     duration: 120,
-//     releaseDate: '2019/07/14'
-// })
-//     .then((response) => console.log(response))
-//     .catch((err) => console.log(err))
+createMovie({
+    name: 'Dr. Strage',
+    genre: 'Science Fiction',
+    duration: 120,
+    releaseDate: '2019/07/14'
+})
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err))
 
 
 //Buscar por id 
